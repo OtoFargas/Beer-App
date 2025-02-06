@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class BeerService {
 
-    public static final String API_URL = "https://random-data-api.com/api/v2/beers?size=2";
+    public static final String API_URL = "https://random-data-api.com/api/v2/beers?size=100";
 
     @Autowired
     private BeerRepository beerRepository;

@@ -1,6 +1,7 @@
 package com.otofargas.beerapp.beer_manager.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,7 @@ public class BeerController {
     @GetMapping
     public List<Beer> getAllBeers() {
         return beerService.getAllBeers();
-    }
-    
+    }    
 
     @PostMapping
     public Beer createBeer(@RequestBody Beer beer) {
@@ -32,8 +32,8 @@ public class BeerController {
     }
 
     @GetMapping("/{id}")
-    public Beer getBeerById(@PathVariable String id) {
-        return beerService.getBeerById();
+    public Optional<Beer> getBeerById(@PathVariable Integer id) {
+        return beerService.getBeerById(id);
     }
     
 }
