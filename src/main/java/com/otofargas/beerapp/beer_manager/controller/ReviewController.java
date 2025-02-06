@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.otofargas.beerapp.beer_manager.model.Beer;
@@ -47,5 +48,10 @@ public class ReviewController {
     @GetMapping("/{id}")
     public Optional<Review> getReviewById(@PathVariable String id) {
         return reviewService.getReviewById(id);
+    }
+
+    @GetMapping("/review")
+    public List<Review> getReviewsByBeerId(@RequestParam Integer beerId) {
+        return reviewService.getReviewsByBeerId(beerId);
     }
 }

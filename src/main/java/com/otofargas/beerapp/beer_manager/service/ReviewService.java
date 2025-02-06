@@ -27,4 +27,7 @@ public class ReviewService {
         return reviewRepository.findById(id);
     }
 
+    public List<Review> getReviewsByBeerId(Integer beerId) {
+        return reviewRepository.findByBeerId(beerId);
+    }
 }
